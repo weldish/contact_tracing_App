@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} Notification page {% endblock %}
+
+
+{% block content %}
+
+
+    <h3 class="home_title">Notification</h3>
+    {% for user in infected_users %}         <!--iterating through a list of returned todolists -->
+
+            <div class="card w-75">
+              <div class="card-body">
+                <h5 class="card-title"> Hi {{user.username}}
+                <hr>
+
+                  {% if user.infected == True%}
+
+                    <h1> You have been exposed to convid 19 </h1>
+                  {% else %}
+                    <h1> Your are safe </h1>
+                  {% endif %}  <!--update the ones that are completed-->
+
+            </div>
+          </div>    <!--viwing the completed tasks-->
+
+
+    {% endfor %}
+
+{% endblock content %}
